@@ -29,13 +29,13 @@ pip install ChaCha20==1.1.1 Cython==3.0.11 PyQt5==5.15.11 PyQt5-Qt5==5.15.2 PyQt
 
 ### AUTO Installation
 ```bash
-   git clone https://github.com/your-repo/KeyGuard.git
+   git clone https://github.com/Skymi0/KeyGuard.git
    cd KeyGuard
    python AUTORUN.py
 ```
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-repo/KeyGuard.git
+   git clone https://github.com/Skymi0/KeyGuard.git
    ```
 
 2. **Navigate to the project directory:**
