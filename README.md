@@ -1,59 +1,55 @@
 
 # KeyGuard Documentation
 
-## Introduction
+## Overview
+**KeyGuard** is a security-focused application designed to help users manage, encrypt, and securely store sensitive information. It leverages strong encryption algorithms to ensure data confidentiality and integrity.
 
-**KeyGuard** is a security-focused application designed to help users manage, encrypt, and safely store sensitive information. The application leverages strong encryption algorithms to ensure the confidentiality and integrity of data.
+### Key Features
+- **🔑 Generate Key**: Automatically generate a secure encryption key.
+- **🛠️ Manual Key**: Manually enter and edit encryption keys.
+- **📂 Split Key**: Split your encryption key into multiple parts for added security.
+- **🔗 Recover Key**: Reassemble your encryption key from stored parts.
+- **🔒 Encrypt Files**: Use encryption keys to secure sensitive files.
+- **🔓 Decrypt Files**: Decrypt files by providing the correct encryption key.
 
-### Key Features:
-- 🔑 **Generate Key**: Automatically generate secure encryption keys.
-- 🛠️ **Manual Key**: Users can manually input and edit their encryption keys for full control.
-- 📂 **Split Key**: Split your encryption key into multiple shares for enhanced security.
-- 🔗 **Recover Key**: Reassemble your encryption key from the stored shares.
-- 🔒 **Encrypt Files**: Use encryption keys to secure sensitive files.
-- 🔓 **Decrypt Files**: Decrypt encrypted files by providing the correct key.
+---
 
 ## Getting Started
 
 ### Prerequisites
-- Python 3.10 =<
+- Python 3.10 or later
 - PyQt5 library
-- Additional libraries for cryptographic functions (e.g., `pycryptodome`)
+- Additional cryptographic libraries (e.g., `pycryptodome`)
 
-You can install the required libraries using `pip`:
+required libraries using:
 ```bash
-pip install ChaCha20==1.1.1 Cython==3.0.11 PyQt5==5.15.11 PyQt5-Qt5==5.15.2 PyQt5_sip==12.15.0 cryptography==43.0.3 fpdf==1.7.2 six==1.16.0 utilitybelt==0.2.6 db-sqlite3==0.0.1
+ChaCha20==1.1.1 Cython==3.0.11 PyQt5==5.15.11 PyQt5-Qt5==5.15.2 PyQt5_sip==12.15.0 cryptography==43.0.3 fpdf==1.7.2 six==1.16.0 utilitybelt==0.2.6 db-sqlite3==0.0.1
 ```
 
 ### Installation
 
-### AUTO Installation
-```bash
-   git clone https://github.com/Skymi0/KeyGuard.git
-   cd KeyGuard
-   python AUTORUN.py
-```
+#### Automatic Installation
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Skymi0/KeyGuard.git
+   cd KeyGuard
    ```
 
-2. **Navigate to the project directory:**
+2. **Run the application:**
    ```bash
-   cd KeyGuard
    python AUTORUN.py
    ```
 
-3. **Set up a virtual environment for security:**
+#### Manual Installation
+1. **Set up a virtual environment**:
+   Using a virtual environment helps to avoid conflicts between project dependencies.
 
-   It's recommended to use a virtual environment to isolate the dependencies for the project, ensuring no conflicts with other projects or system libraries.
-
-   - Create a virtual environment:
+   - **Create a virtual environment**:
      ```bash
      python -m venv venvKeyGuard
      ```
 
-   - Activate the virtual environment:
+   - **Activate the virtual environment**:
      - On **Windows**:
        ```bash
        venv\Scripts\activate
@@ -63,68 +59,71 @@ pip install ChaCha20==1.1.1 Cython==3.0.11 PyQt5==5.15.11 PyQt5-Qt5==5.15.2 PyQt
        source venv/bin/activate
        ```
 
-4. **Install the project dependencies:**
+2. **Install project dependencies**:
    - On **Windows**:
-   ```bash
-   venv\Scripts\python -m pip install -r requirements.txt
-   ```
+     ```bash
+     venv\Scripts\python -m pip install -r requirements.txt
+     ```
    - On **macOS/Linux**:
+     ```bash
+     venv/bin/python3 -m pip install -r requirements.txt
+     ```
+
+3. **Run the application**:
    ```bash
-   venv/bin/python3 -m pip install -r requirements.txt
+   python  KeyGuard/main.py
    ```
 
-5. **Run the application:**
-   ```bash
-   python AUTORUN.py
-   ``` 
-
+---
 
 ## How to Use KeyGuard
 
 ### Main Functionalities
 
 #### 1. Generate Key
-- Navigate to the 'Generate Key' option from the main menu.
-- A secure encryption key will be generated using AES-256, or ChaCha20.
-- The key is saved securely for later use in encryption and decryption tasks.
+- Select **Generate Key** from the main menu.
+- A secure encryption key will be generated using AES-256 or ChaCha20, and stored securely.
 
 #### 2. Manual Key
-- Select 'Manual Key' from the menu to manually enter a key.
-- This feature is particularly useful for advanced users who want to control their encryption keys.
+- Choose **Manual Key** from the menu to enter a custom key.
+- This feature is especially useful for advanced users who prefer to control their encryption keys.
 
 #### 3. Split Key
-- Use the 'Split Key' feature to divide your encryption key into multiple parts (shares).
-- Store these shares in separate locations (e.g., USB,  storage) to minimize risk.
+- Use **Split Key** to divide your encryption key into multiple shares.
+- Store these shares in separate, secure locations (e.g., USB, secure storage) to reduce risk.
 
 #### 4. Recover Key
 - Reassemble your encryption key by combining a specific number of shares.
-- This ensures that even if one share is lost, you can still recover your key using the remaining shares.
+- This ensures you can still recover the key even if one share is lost.
 
 #### 5. Encrypt Files
-- Select the files you wish to secure and use an encryption key to encrypt them.
-- Supported encryption algorithms: AES-256, and ChaCha20.
+- Select the files you want to secure, and use an encryption key to protect them.
 
 #### 6. Decrypt Files
-- Choose 'Decrypt Files' and provide the correct encryption key to unlock and access your encrypted files.
-- Supported encryption algorithms: AES-256, and ChaCha20.
+- Choose **Decrypt Files** and provide the correct encryption key to unlock and access the files.
 
-### Frequently Asked Questions (FAQ)
+---
 
-#### 1. **What encryption algorithms are supported?**
-- **AES-256**: A stronger encryption method with a 256-bit key for enhanced security.
-- **ChaCha20**: A fast and secure stream cipher used in modern cryptography.
+## FAQ
 
-#### 2. **Is it safe to store encryption keys in the ?**
-- This depends on your  provider. Always enable two-factor authentication (2FA) and other security measures when storing sensitive keys in the .
+1. **What encryption algorithms are supported?**
+   - **AES-256**: A strong encryption method with a 256-bit key for enhanced security.
+   - **ChaCha20**: A fast and secure stream cipher used in modern cryptography.
 
-#### 3. **Can I recover my key if I lose a share?**
-- Yes, as long as you have enough shares to meet the minimum threshold, you can recover your key.
+2. **Is it safe to store encryption keys in the cloud?**
+   - This depends on the provider. Always enable two-factor authentication (2FA) and other security measures for added protection.
 
-#### 4. **Is there a limit to how many keys I can generate?**
-- No, there is no limit to the number of keys you can generate and manage within KeyGuard.
+3. **Can I recover my key if I lose one of the shares?**
+   - Yes, as long as you have enough shares to meet the minimum threshold, you can recover the key.
+
+4. **Is there a limit on the number of keys I can generate?**
+   - No, you can generate and manage an unlimited number of keys within KeyGuard.
+
+---
 
 ## Security Considerations
 
-- **Key Management**: Be sure to store your key shares securely. Unauthorized access to your key or its shares can lead to a compromise.
-- **Two-Factor Authentication**: When storing data in the , enable two-factor authentication (2FA) for an extra layer of protection.
-- **Encryption Algorithms**: KeyGuard supports industry-standard encryption algorithms like AES-256, and ChaCha20 to ensure strong data protection.
+- **Key Management**: Store your key shares securely. Unauthorized access to your key or its shares can lead to compromise.
+- **Two-Factor Authentication**: When storing data in the cloud, enable two-factor authentication (2FA) for added security.
+- **Encryption Algorithms**: KeyGuard uses industry-standard encryption algorithms like AES-256 and ChaCha20 to ensure strong data protection.
+
